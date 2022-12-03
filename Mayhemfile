@@ -1,0 +1,6 @@
+project: x509-parser
+target: x509-parser-fuzz
+
+cmds:
+    - cmd: ./x509-parser-fuzz
+      libfuzzer: true

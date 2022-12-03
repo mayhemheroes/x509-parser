@@ -1,0 +1,25 @@
+[package]
+name = "x509-parser-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.x509-parser]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "x509-parser-fuzz"
+path = "fuzz_targets/x509-parser-fuzz.rs"
+test = false
+doc = false
